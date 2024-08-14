@@ -2,32 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: rgba(24, 0, 181, 0.829);
+    --chart-4: rgb(68, 166, 57);
   }
 }
 
+* {
+  color: rgb(43, 38, 70);
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.navigation {
+  position: absolute;
+  top: 5px;
+  left: 90px;
+  border: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 0 20px;
+  background-color: rgba(233, 106, 100, 0.95);
+  z-index: 1;
+  color: aliceblue;
+}
+.footerSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+}
+.footerParagraph {
+  position: absolute;
+  bottom: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 2px 58px;
+  width: 500px;
+  border-radius: 5px;
+  color: rgba(201, 218, 255, 0.9);
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  font-size: 14px;
+}
+.footerParagraph:hover {
+  color: rgba(233, 233, 255, 0.6);
+  background-color: rgb(43, 38, 70);
+}
+.name {
+  font-weight: bold;
 }
